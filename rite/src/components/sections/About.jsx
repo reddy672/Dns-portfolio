@@ -3,12 +3,13 @@ import { RevealOnScroll } from "../RevealOnScroll";
 export const About = () => {
   const skills = [
     { name: "HTML", percentage: 95 },
-    { name: "CSS", percentage: 95 },
-    { name: "JavaScript", percentage: 90 },
+    { name: "CSS", percentage: 85 },
+    { name: "JavaScript", percentage: 80 },
     { name: "React", percentage: 50 },
     { name: "Node.js", percentage: 60 },
     { name: "MongoDB", percentage: 80 },
     { name: "SQL", percentage: 70 },
+    { name: "Python", percentage: 60 },
   ];
 
   return (
@@ -21,16 +22,19 @@ export const About = () => {
 
           <div className="rounded-xl p-8 border border-gray-700 bg-white/5 shadow-lg hover:-translate-y-1 transition-all">
             <p className="text-gray-300 mb-6 leading-relaxed">
-              I'm a **B.Tech 3rd-year student** in **Information Technology** at **Sasi Institute of Technology**.  
-              Passionate about **web development, cloud computing, and machine learning**,  
+              I'm a B.Tech 3rd-year student in Information Technology at Sasi Institute of Technology.  
+              Passionate about web development, cloud computing, and machine learning,  
               I'm continuously learning and experimenting with new technologies to build creative and scalable solutions.
             </p>
 
-            {/* Skill Progress Bars */}
+            {/* Skill Progress Bars with Percentage */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               {skills.map((skill, index) => (
                 <div key={index}>
-                  <h3 className="text-lg font-semibold">{skill.name}</h3>
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-lg font-semibold">{skill.name}</h3>
+                    <span className="text-gray-400 text-sm">{skill.percentage}%</span>
+                  </div>
                   <div className="w-full bg-gray-700 rounded-full h-2.5 mt-2">
                     <div className="bg-gradient-to-r from-purple-500 to-indigo-400 h-2.5 rounded-full" style={{ width: `${skill.percentage}%` }}></div>
                   </div>
