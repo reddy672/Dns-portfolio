@@ -1,108 +1,66 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = () => {
-  const frontendSkills = [
-    "React",
-    "Vue",
-    "TypeScript",
-    "TailwindCSS",
-    "Svelte",
+  const skills = [
+    { name: "HTML", percentage: 95 },
+    { name: "CSS", percentage: 95 },
+    { name: "JavaScript", percentage: 90 },
+    { name: "React", percentage: 50 },
+    { name: "Node.js", percentage: 60 },
+    { name: "MongoDB", percentage: 80 },
+    { name: "SQL", percentage: 70 },
+    { name: "Python", percentage: 60 },
   ];
 
-  const backendSkills = ["Node.js", "Python", "AWS", "MongoDB", "GraphQL"];
-
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center py-20"
-    >
+    <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-[#0a0a0a] text-gray-200">
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
-            {" "}
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-extrabold mb-8 bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">
             About Me
           </h2>
 
-          <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
-            <p className="text-gray-300 mb-6">
-              Passionate developer with expertise in building scalable web
-              applications and creating innovative solutions.
+          <div className="rounded-xl p-8 border border-gray-700 bg-white/5 shadow-lg hover:-translate-y-1 transition-all">
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              I'm a B.Tech 3rd-year student in Information Technology at Sasi Institute of Technology.  
+              Passionate about web development, cloud computing, and machine learning,  
+              I'm continuously learning and experimenting with new technologies to build creative and scalable solutions.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Frontend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {frontendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
+            {/* Skill Progress Bars with Percentage */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+              {skills.map((skill, index) => (
+                <div key={index}>
+                  <div className="flex justify-between items-center">
+                    <h3 className="text-lg font-semibold">{skill.name}</h3>
+                    <span className="text-gray-400 text-sm">{skill.percentage}%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-2.5 mt-2">
+                    <div className="bg-gradient-to-r from-purple-500 to-indigo-400 h-2.5 rounded-full" style={{ width: `${skill.percentage}%` }}></div>
+                  </div>
                 </div>
-              </div>
-
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Backend</h3>
-                <div className="flex flex-wrap gap-2">
-                  {backendSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,2246,0.2)] transition
-                    "
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
+          {/* Education & Internships */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
+            <div className="p-6 rounded-xl border border-gray-700 bg-white/5 shadow-lg hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold mb-4">🏫 Education</h3>
               <ul className="list-disc list-inside text-gray-300 space-y-2">
-                <li>
-                  <strong> B.S. in Computer Science </strong> - XYZ University
-                  (2016-2020)
-                </li>
-                <li>
-                  Relevant Coursework: Data Structures, Web Development, Cloud
-                  Computing...
-                </li>
+                <li><strong>B.Tech in IT</strong> - Sasi Institute of Technology (Ongoing)</li>
+                <li><strong>Diploma</strong> - BVC College, Rajahmundry</li>
+                <li><strong>SSC</strong> - Govt Boys High School, Rajahmundry</li>
+                <li>Relevant Coursework: Web Development, Python, C++ (Currently Learning)</li>
               </ul>
             </div>
-            <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
-              <div className="space-y-4 text-gray-300">
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Software Engineer at ABC Corp (2020 - Present){" "}
-                  </h4>
-                  <p>
-                    Developed and maintained microservices for cloud-based
-                    applications.
-                  </p>
-                </div>
 
-                <div>
-                  <h4 className="font-semibold">
-                    {" "}
-                    Intern at DEF Startups (2019){" "}
-                  </h4>
-                  <p>
-                    Assisted in building front-end components and integration
-                    REST APIs
-                  </p>
-                </div>
-              </div>
+            <div className="p-6 rounded-xl border border-gray-700 bg-white/5 shadow-lg hover:-translate-y-1 transition-all">
+              <h3 className="text-xl font-bold mb-4">📌 Internships</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <li><strong>ExcelR</strong> - Data Science & Machine Learning</li>
+                <li><strong>AWS</strong> - Cloud & Machine Learning</li>
+              </ul>
             </div>
           </div>
         </div>
